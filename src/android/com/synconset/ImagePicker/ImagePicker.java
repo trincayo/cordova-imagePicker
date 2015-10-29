@@ -45,7 +45,7 @@ public class ImagePicker extends CordovaPlugin {
 				quality = this.params.getInt("quality");
 			}
 			if (this.params.has("date")) {
-				quality = this.params.getLong("date");
+				date = this.params.getLong("date");
 			}
 			intent.putExtra("MAX_IMAGES", max);
 			intent.putExtra("WIDTH", desiredWidth);
