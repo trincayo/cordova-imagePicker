@@ -2,6 +2,7 @@ cordova-imagePicker
 ===================
 
 Cordova Plugin For Multiple Image Selection - implemented for iOS and Android 4.0 and above.
+Trincayo version: New parameter: date: The minimum date since your album will be show. This date is en EPOCH format. Only works in Android.
 
 ## Installing the plugin
 
@@ -60,6 +61,7 @@ window.imagePicker.getPictures(
     	// is at least that wide.
     	width: int,
     	height: int,
+    	date: long int,
     	
     	// quality of resized image, defaults to 100
     	quality: int (0-100)
