@@ -20,6 +20,7 @@ var ImagePicker = function() {
 *		         image will be returned)
 *		.height - height to resize image to
 *		.quality - quality of resized image, defaults to 100
+*		.date - date in epoch format. Defaults to 0 === 1/1/1970
 */
 ImagePicker.prototype.getPictures = function(success, fail, options) {
 	if (!options) {
@@ -30,7 +31,9 @@ ImagePicker.prototype.getPictures = function(success, fail, options) {
 		maximumImagesCount: options.maximumImagesCount ? options.maximumImagesCount : 15,
 		width: options.width ? options.width : 0,
 		height: options.height ? options.height : 0,
-		quality: options.quality ? options.quality : 100
+		quality: options.quality ? options.quality : 100,
+		date: options.date ? options.date : 0
+
 	};
 
 	return cordova.exec(success, fail, "ImagePicker", "getPictures", [params]);

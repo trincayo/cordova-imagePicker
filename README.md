@@ -61,10 +61,13 @@ window.imagePicker.getPictures(
     	// is at least that wide.
     	width: int,
     	height: int,
-    	date: long int,
+    	
     	
     	// quality of resized image, defaults to 100
-    	quality: int (0-100)
+    	quality: int (0-100),
+		//Date in epoch format. Minimim date for the images to show in the album
+		date: long int
+		
     };
     
 ### Note for Android Use

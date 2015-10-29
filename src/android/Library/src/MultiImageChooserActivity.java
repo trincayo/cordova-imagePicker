@@ -86,6 +86,7 @@ public class MultiImageChooserActivity extends Activity implements OnItemClickLi
     public static final String WIDTH_KEY = "WIDTH";
     public static final String HEIGHT_KEY = "HEIGHT";
     public static final String QUALITY_KEY = "QUALITY";
+	public static final String DATE_KEY = "DATE";
 
     private ImageAdapter ia;
 
@@ -106,6 +107,7 @@ public class MultiImageChooserActivity extends Activity implements OnItemClickLi
     private int desiredWidth;
     private int desiredHeight;
     private int quality;
+	private long date;
 
     private GridView gridView;
 
@@ -129,6 +131,7 @@ public class MultiImageChooserActivity extends Activity implements OnItemClickLi
         desiredWidth = getIntent().getIntExtra(WIDTH_KEY, 0);
         desiredHeight = getIntent().getIntExtra(HEIGHT_KEY, 0);
         quality = getIntent().getIntExtra(QUALITY_KEY, 0);
+		date = getIntent().getIntExtra(DATE_KEY, 0);
         maxImageCount = maxImages;
 
         Display display = getWindowManager().getDefaultDisplay();
@@ -248,7 +251,8 @@ public class MultiImageChooserActivity extends Activity implements OnItemClickLi
         }
 
         cl = new CursorLoader(MultiImageChooserActivity.this, MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-                img.toArray(new String[img.size()]), null, null, "DATE_MODIFIED DESC");
+                //img.toArray(new String[img.size()]), null, null, "DATE_MODIFIED DESC");
+			 img.toArray(new String[img.size()]), "DATE_ADDED > " + date, null, "DATE_MODIFIED DESC");
         return cl;
     }
 
