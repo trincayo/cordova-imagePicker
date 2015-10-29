@@ -131,8 +131,8 @@ public class MultiImageChooserActivity extends Activity implements OnItemClickLi
         desiredWidth = getIntent().getIntExtra(WIDTH_KEY, 0);
         desiredHeight = getIntent().getIntExtra(HEIGHT_KEY, 0);
         quality = getIntent().getIntExtra(QUALITY_KEY, 0);
-		date = getIntent().getIntExtra(DATE_KEY, 0);
-        maxImageCount = maxImages;
+		date = getIntent().getLongExtra(DATE_KEY, 0);
+ 		maxImageCount = maxImages;
 
         Display display = getWindowManager().getDefaultDisplay();
         int width = display.getWidth();
